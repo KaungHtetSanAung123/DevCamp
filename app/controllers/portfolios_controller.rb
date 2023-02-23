@@ -7,7 +7,6 @@ class PortfoliosController < ApplicationController
         @portfolio_item = Portfolio.new
     end
 
-    
 
     def portfolio_params
         params.require(:portfolio).permit(:title, :subtitle, :body)
