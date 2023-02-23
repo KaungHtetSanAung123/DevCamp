@@ -1,4 +1,4 @@
-# DevCamp Portfolio Application Test KHSA Updated
+# DevCamp Portfolio Application KHSA
 >This is a Ruby on Rails application that allows users to create their own portfolios
 ### Features
 
