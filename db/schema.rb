@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_045550) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_080509) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -69,6 +69,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_045550) do
     t.integer "percent_utilized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "badge"
+  end
+
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.integer "portfolio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -78,4 +87,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_045550) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "technologies", "portfolios"
 end

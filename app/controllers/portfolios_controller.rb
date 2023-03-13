@@ -21,7 +21,7 @@ class PortfoliosController < ApplicationController
     
         respond_to do |format|
           if @portfolio_item.save
-            format.html { redirect_to blogs_url, notice: "Your Portfolio was successfully created." }
+            format.html { redirect_to portfolios_path, notice: "Your Portfolio was successfully created." }
             # format.html { redirect_to portfolios_path(@portfolio_item), notice: "Your Portfolio was successfully created." }
             # format.html { redirect_to blog_url(@portfolio_item), notice: "Your Portfolio was successfully created." }
            format.json { render :show, status: :created, location: @portfolio_item }
@@ -36,9 +36,9 @@ class PortfoliosController < ApplicationController
         @portfolio_item = Portfolio.find(params[:id])
       end
 
-      # def show
-      #   @portfolio_item = Portfolio.find(params[:id] )
-      # end
+       def show
+         @portfolio_item = Portfolio.find(params[:id] )
+       end
 
       def update
         @portfolio_item = Portfolio.find(params[:id])
