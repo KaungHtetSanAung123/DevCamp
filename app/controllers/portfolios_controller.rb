@@ -2,8 +2,6 @@ class PortfoliosController < ApplicationController
     def index
         @portfolio_items = Portfolio.all 
     end
-<<<<<<< Updated upstream
-=======
     def new
         @portfolio_item=Portfolio.new
     end
