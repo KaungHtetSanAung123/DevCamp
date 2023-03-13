@@ -55,5 +55,4 @@ def portfolio_params
     params.require(:portfolio).permit(:title, :subtitle, :body)
 
 end 
->>>>>>> Stashed changes
 end
