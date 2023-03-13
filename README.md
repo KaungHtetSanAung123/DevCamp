@@ -1,4 +1,4 @@
-# DevCamp Portfolio Application KHSA
+# DevCamp Portfolio Application
 >This is a Ruby on Rails application that allows users to create their own portfolios
 ### Features
 
@@ -15,4 +15,4 @@ end
 ```
 ```javascript 
 alert('Hi there')
-```# DevKHSA
+```
