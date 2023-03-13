@@ -1,10 +1,3 @@
 class ApplicationController < ActionController::Base
-<<<<<<< Updated upstream
+    included SetSource
 end
-=======
-
-included SetSource
-
-
-end
->>>>>>> Stashed changes
