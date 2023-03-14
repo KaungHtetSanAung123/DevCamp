@@ -1,7 +1,16 @@
 <%= image_tag @portfolio_item.main_image  %>
 <h1><%= @portfolio_item.title%></h1>
 <p><%= @portfolio_item.body%></p>
-<hr>
-
 
 <%= @portfolio_item = Portfolio.find(params[:id]).title %>
+
+
+<h2> Technologies Used: </h2>
+
+
+<%# <% @portfolio_item.technologies.each do |technologies| %>
+<%# <p><%= technologies.name %>
+
+<%# <% end %>
+
+
