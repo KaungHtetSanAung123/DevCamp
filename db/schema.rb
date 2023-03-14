@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_03_13_080509) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_032114) do
+>>>>>>> 2d224dbfd481fb3e282cc0e5d41131657b06a1e3
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "slug"
     t.integer "status"
     t.integer "topic_id"
@@ -45,6 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_080509) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+>>>>>>> 2d224dbfd481fb3e282cc0e5d41131657b06a1e3
   end
 
   create_table "portfolios", force: :cascade do |t|
@@ -53,13 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_080509) do
     t.text "body"
     t.text "main_image"
     t.text "thumb_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

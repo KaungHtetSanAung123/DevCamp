@@ -1,7 +1,7 @@
-<h1>Create  a new Portfolio </h1>
-
-<%= form_for (@portfolio_item) do |f| %>
+<h1>Create a new Portfolio Item</h1>
+<%= form_for(@portfolio_item) do|f|%>
 <div class="field">
+<<<<<<< HEAD
     <%= f.label :title %>
     <%= f.text_field :title %>
     </div>
@@ -30,3 +30,23 @@
     </div>
 
     <% end %>
+=======
+<%= f.label :title%>
+<%= f.text_field :title%>
+</div>
+<br>
+<div class="field">
+<%= f.label :subtitle%>
+<%= f.text_field :subtitle%>
+</div>
+<br>
+<div class="field">
+<%= f.label :body%>
+<%= f.text_field :body%>
+</div>
+<br>
+<div class="action">
+<%= f.submit%>
+</div>
+<% end%>
+>>>>>>> 2d224dbfd481fb3e282cc0e5d41131657b06a1e3

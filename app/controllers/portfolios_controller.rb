@@ -6,22 +6,16 @@ class PortfoliosController < ApplicationController
     def angular
       @angular_portfolio_items = Portfolio.angular
     end
-
     def new
-        @portfolio_item = Portfolio.new
+        @portfolio_item=Portfolio.new
         3.times { @portfolio_item.technologies.build }
     end
-
-
-    def portfolio_params
-        params.require(:portfolio).permit(:title, :subtitle, :body)
-      end
-
     def create
-        # @portfolio_item = Portfolio.new(portfolio_params)
+        # @portfolio_item=Portfolio.new(portfolio_params)
         @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body ,technologies_attributes: [:name]))
 
-    
+
+        # @portfolio_item=Portfolio.new(params.required(:portfolio).permit(:title, :subtitle,:body))
         respond_to do |format|
           if @portfolio_item.save
             format.html { redirect_to portfolios_path, notice: "Your Portfolio was successfully created." }
@@ -54,20 +48,28 @@ class PortfoliosController < ApplicationController
             format.json { render json: @blog.errors, status: :unprocessable_entity }
           end
         end
-      end
+    end
 
-      def destroy
-        # Perform the lookup
-        @portfolio_item = Portfolio.find(params[:id])
+    end
+    def show
+      @portfolio_item=Portfolio.find(params[:id])    
+    end
 
-        # Destroy / delete the record
-        @portfolio_item.destroy
-
-        #redirect 
-        respond_to do |format|
-          format.html { redirect_to blogs_url, notice: "Portfolio was successfully destroyed." }
-        end
-      end
+    def destroy 
+        #Perform the lookup
+    @portfolio_item=Portfolio.find(params[:id])  
+    #Destroy/delete the record
+    @portfolio_item.destroy
+    #Redirect
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: "The record was successfully destroyed." }
       
-    
+    end
+end
+
+private
+def portfolio_params
+    params.require(:portfolio).permit(:title, :subtitle, :body)
+
+end 
 end
